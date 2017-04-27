@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Jazz Head Quiz</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="main.css">
+
+</head>
+<body>
+	
+	<div id="front_page">
+		<div>
+		<h1><ins>Music Quiz</ins> </h1>
+		</div>
+		<div>
+		<button class="start">Start!</button>
+		</div>
+	</div>
+	
+	 <div class="question_panel">
+		<nav>
+			<div>
+				<div class="score">0 point</div>
+				<div class="progress">Question 1/10</div>
+			</div>
+		</nav>
+		<div class="h2">
+			<h2 class="question"></h2>
+			  <div class="answers">
+				<button class="choice_1 selected">A - </button> 
+				<button class="choice_2 selected">B - </button>
+				<button class="choice_3 selected">C - </button>
+				<button class="choice_4 selected">D - </button>
+			  </div>
+	</div>
+
+	<div class="verdict">
+		<button class="submit">Check answer</button>
+		<p class="correctAnswer"></p>
+		<button class="next">Next...</button>
+	
+	</div>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
