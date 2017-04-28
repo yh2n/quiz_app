@@ -20,25 +20,25 @@ state = {
 	 	  userAnswer: " "},
 
 	 	{ question: "Who was the first guitar player to join Return To Forever?",
-	 	  choice1: "Bill Connors", choice2: "Dwayne 'BlackByrd' McKnight", choice3: "Frank Gambale", 
+	 	  choice1: "Bill Connors", choice2: "'BlackByrd' McKnight", choice3: "Frank Gambale", 
 	 	  	choice4: "Al Di Meola",
 	 	  correctAnswer: "Al Di Meola",
 	 	  userAnswer: " "},
 
 	 	{ question: "What classically trained pianist/composer also poet, deeply influenced by dancers\
-	 	  			  is one the pioneer of free jazz?",
+	 	  			  is one of the pioneer of free jazz?",
 	 	  choice1: "Muhal Richard Abrams", choice2: "Cecil Taylor", choice3: "Keith Jarrett", choice4: "Andrew Hill",
 	 	  correctAnswer: "Cecil Taylor",
 	 	  userAnswer: " "},
 
-	 	{ question: "Following John Coltrane's legacy, this avant-garde tenor player blended african chants\
+	 	{ question: "Following John Coltrane's legacy, this avant-garde tenor player blended African chants\
 	 				and polyrythm with improvisation?",
 	 	  choice1: "Roscoe Mitchell", choice2: "David Murray", choice3: "Eric Dolphy", choice4: "Pharoah Sanders",
 	 	  correctAnswer: "Pharoah Sanders",
 	 	  userAnswer: " " },
 
 	 	{ question: "What flautist was heavily featured on Gil Scott-Heron album\
-	 				 'Pieces of a man'?",
+	 				 'Pieces of a Man'?",
 	 	  choice1: "Bobbi Humphrey", choice2: "Hubert Laws", choice3: "Herbie Mann", choice4: "Frank Wess",
 	 	  correctAnswer: "Hubert Laws",
 	 	  userAnswer: " "},
@@ -71,10 +71,7 @@ var score = state.score;
 var progress = state.progress;
 var currentQuestion = state.questions[0];
 
-
-
 //3. Rendering
-
 
 function addContent() {
 	 $(".question").text(currentQuestion.question);
@@ -85,44 +82,49 @@ function addContent() {
 	 $(".choice_1, .choice_2, .choice_3, .choice_4").removeClass("selected");
 }
 
-function userAnswer(choice) {
-	state.questions.userAnswer = choice;
+function userAnswer() {
 	$(".choice_1, .choice_2, .choice_3, .choice_4").on("click", function(event) {
 		$(this).addClass("selected").siblings().removeClass("selected");
-		return choice;
 	}); 
 }
 
-function submitChoice() {
- 	$(".submit").on("click", function(event) {
- 		$(".next").show();
- 	});
-}
-
-// currently not working. Fix question validation
 // function submitChoice() {
-// 	$(".submit").on("click", function(event) {
-// 		if (!state.questions.userAnswer) {
-// 			alert ("pick an answer first!");
-// 		}
-		
-// 		else {
-// 			$(".next").show();
-// 		}
-
-// 	});
+//  	$(".submit").on("click", function(event) {
+//  		$(".next").show();
+//  	});
 // }
 
+//currently not working. Fix question validation
+function submitChoice() {
+	$(".submit").on("click", function(event) {
+		if ($(".selected").text() === "") {
+			alert ("pick an answer first!");
+		}
+		
+		else {
+			$(".next").show();
+		}
 
-
-
-function updateContent() {
-	progress++;
-	currentQuestion = state.questions[progress];
-	return addContent();
+	});
 }
 
 //4 Event listeners
+
+function updateContent() {
+	$(".next").on("click", function() {
+		progress++;
+		currentQuestion = state.questions[progress];
+		$(".next").hide();
+		return addContent();
+ 	});
+}
+
+function updateNav() {
+	$(".next").on("click", function() {
+	score++;
+
+	});
+}
 
 function start() {
 	$(".question_panel").hide();
