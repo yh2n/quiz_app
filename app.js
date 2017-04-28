@@ -96,12 +96,18 @@ function userAnswer() {
 
 //currently not working. Fix question validation
 function submitChoice() {
+	//state.questions[progress].correctAnswer = $(correctAnswer);
 	$(".submit").on("click", function(event) {
 		if ($(".selected").text() === "") {
-			alert ("pick an answer first!");
+			alert ("you didn't pick one!");
 		}
 		
+		else if ($(".selected").text() === state.questions[progress].correctAnswer) {
+			$(".correctAnswer").text("Well done!");
+			$(".next").show();
+		 }
 		else {
+			$(".correctAnswer").text("Nope... it's " + state.questions[progress].correctAnswer);
 			$(".next").show();
 		}
 
@@ -115,13 +121,13 @@ function updateContent() {
 		progress++;
 		currentQuestion = state.questions[progress];
 		$(".next").hide();
+		$(".correctAnswer").hide();
 		return addContent();
  	});
 }
 
 function updateNav() {
 	$(".next").on("click", function() {
-	score++;
 
 	});
 }
