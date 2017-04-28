@@ -69,7 +69,7 @@ state = {
 
 var score = state.score;
 var progress = state.progress;
-var question = state.questions[0];
+var currentQuestion = state.questions[0];
 
 
 
@@ -77,11 +77,11 @@ var question = state.questions[0];
 
 
 function addContent() {
-	 $(".question").text(question.question);
-	 $(".choice_1").text(question.choice1);
-	 $(".choice_2").text(question.choice2);
-	 $(".choice_3").text(question.choice3);
-	 $(".choice_4").text(question.choice4);
+	 $(".question").text(currentQuestion.question);
+	 $(".choice_1").text(currentQuestion.choice1);
+	 $(".choice_2").text(currentQuestion.choice2);
+	 $(".choice_3").text(currentQuestion.choice3);
+	 $(".choice_4").text(currentQuestion.choice4);
 	 $(".choice_1, .choice_2, .choice_3, .choice_4").removeClass("selected");
 }
 
@@ -99,6 +99,7 @@ function submitChoice() {
  	});
 }
 
+// currently not working. Fix question validation
 // function submitChoice() {
 // 	$(".submit").on("click", function(event) {
 // 		if (!state.questions.userAnswer) {
@@ -113,32 +114,12 @@ function submitChoice() {
 // }
 
 
-function renderContent(state) {  
-	var questionsHtml = '<div class="question_panel">'
-		+ '<nav>'
-			+ '<div>'
-				+ '<div class="score">' + '</div>'
-				+ '<div class="progress">' + '</div>'
-			+ '</div>'
-		+ '</nav>'	
-		 + '<div class="question">' + '</h2>'
-			+ '<div class="answers">'
-				+ '<button class="choice_1">' + 'A' + '-' + '</button>'
-				+ '<button class="choice_2">' + 'B' + '-' + '</button>'
-				+ '<button class="choice_3">' + 'C' + '-' + '</button>'
-				+ '<button class="choice_4">' + 'D' + '-' + '</button>'
-			+ '</div>'
-		+ '<div class="verdict">'
-		+ '<button class="submit">' + 'Check answer' + '</button>';
-		return questionsHtml;
-}
+
 
 function updateContent() {
-	$(".next").on("click", function(event) {
-		for (var i = 0; i < 9; i++) {
-			return question++;
-		}
-	});	
+	progress++;
+	currentQuestion = state.questions[progress];
+	return addContent();
 }
 
 //4 Event listeners
@@ -154,7 +135,6 @@ function start() {
 	addContent();
 	userAnswer();
 	submitChoice();
-	renderContent(state);
 	updateContent();
 	addContent();
 
