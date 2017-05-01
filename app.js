@@ -137,14 +137,15 @@ function updatePage() {
 }
 
 function updateScore() {
-	if ($(".selected").text() === state.questions[progress].correctAnswer) {
-		score++;
-		$(".score").text(score + " point");
-	}
 
-	else if ($(".selected").text() === state.questions[progress].correctAnswer && score >= 2) {
+	if ($(".selected").text() === state.questions[progress].correctAnswer && score >= 1) {
 		score++;
 		$(".score").text(score + " points");
+	}
+
+	else if ($(".selected").text() === state.questions[progress].correctAnswer) {
+		score++;
+		$(".score").text(score + " point");
 	}
 
 	else {
