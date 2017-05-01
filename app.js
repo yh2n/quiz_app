@@ -22,7 +22,7 @@ state = {
 	 	{ question: "Who was the first guitar player to join Return To Forever?",
 	 	  choice1: "Bill Connors", choice2: "'BlackByrd' McKnight", choice3: "Frank Gambale", 
 	 	  	choice4: "Al Di Meola",
-	 	  correctAnswer: "Al Di Meola",
+	 	  correctAnswer: "Bill Connors",
 	 	  userAnswer: " "},
 
 	 	{ question: "What classically trained pianist/composer also poet, deeply influenced by dancers\
@@ -55,13 +55,14 @@ state = {
  		  correctAnswer: "Keith Jarrett",
  		  userAnswer: " " },
 
-	 	{ question: "Who composed the soundtrack for the French movie 'Ascenseur pour l'échaffaud' ?",
+	 	{ question: "Who composed the soundtrack for the French movie 'Ascenseur pour l'échaffaud'?",
 	 	  choice1: "Miles Davis", choice2: "Duke Ellington", choice3: "Dizzie Gillespie", choice4: "Charles Mingus",
 	 	  correctAnswer: "Miles Davis",
 	 	  userAnswer: " "}],			
 
 	score: 0,
-	progress: 0
+	progress: 0,
+	page: 1
 
 }
 
@@ -70,6 +71,7 @@ state = {
 var score = state.score;
 var progress = state.progress;
 var currentQuestion = state.questions[0];
+var page = state.page;
 
 //3. Rendering
 
@@ -82,17 +84,15 @@ function addContent() {
 	 $(".choice_1, .choice_2, .choice_3, .choice_4").removeClass("selected");
 }
 
+//.4 Event listener
+
 function userAnswer() {
 	$(".choice_1, .choice_2, .choice_3, .choice_4").on("click", function(event) {
 		$(this).addClass("selected").siblings().removeClass("selected");
 	}); 
 }
 
-// function submitChoice() {
-//  	$(".submit").on("click", function(event) {
-//  		$(".next").show();
-//  	});
-// }
+
 
 //currently not working. Fix question validation
 function submitChoice() {
@@ -100,36 +100,54 @@ function submitChoice() {
 	$(".submit").on("click", function(event) {
 		if ($(".selected").text() === "") {
 			alert ("you didn't pick one!");
+			
 		}
 		
-		else if ($(".selected").text() === state.questions[progress].correctAnswer) {
+		 else if ($(".selected").text() === state.questions[progress].correctAnswer) {
 			$(".correctAnswer").text("Well done!");
 			$(".next").show();
-		 }
-		else {
-			$(".correctAnswer").text("Nope... it's " + state.questions[progress].correctAnswer);
-			$(".next").show();
-		}
+			updateScore();
 
+		 }
+
+		else {
+			$(".correctAnswer").text("Incorrect...");
+			$(".next").show();
+			
+		}
 	});
 }
 
-//4 Event listeners
-
 function updateContent() {
 	$(".next").on("click", function() {
+		updatePage();
 		progress++;
 		currentQuestion = state.questions[progress];
 		$(".next").hide();
 		$(".correctAnswer").hide();
-		return addContent();
+		addContent();
  	});
 }
 
-function updateNav() {
-	$(".next").on("click", function() {
+function updatePage() {
+		page++;
+		$(".progress").text("Question " + page + "/10")
+}
 
-	});
+function updateScore() {
+	if ($(".selected").text() === state.questions[progress].correctAnswer) {
+		score++;
+		$(".score").text(score + " point");
+	}
+
+	else if ($(".selected").text() === state.questions[progress].correctAnswer && score >= 2) {
+		score++;
+		$(".score").text(score + " points");
+	}
+	
+	else {
+		console.log();
+	}
 }
 
 function start() {
@@ -145,7 +163,6 @@ function start() {
 	submitChoice();
 	updateContent();
 	addContent();
-
 }
 
 $(function () {
