@@ -106,6 +106,7 @@ function submitChoice() {
 		 else if ($(".selected").text() === state.questions[progress].correctAnswer) {
 			$(".correctAnswer").text("Well done!");
 			$(".next").show();
+			$(".correctAnswer").show();
 			updateScore();
 
 		 }
@@ -113,6 +114,7 @@ function submitChoice() {
 		else {
 			$(".correctAnswer").text("Incorrect...");
 			$(".next").show();
+			$(".correctAnswer").show();
 			
 		}
 	});
@@ -144,7 +146,7 @@ function updateScore() {
 		score++;
 		$(".score").text(score + " points");
 	}
-	
+
 	else {
 		console.log();
 	}
