@@ -43,7 +43,7 @@ state = {
 	 	  correctAnswer: "Hubert Laws",
 	 	  userAnswer: " "},
 
-	 	{ question: "What pianist of Trinidadian descent, child prodigy has been heavily featured\
+	 	{ question: "What pianist/vovalist of Trinidadian descent, child prodigy has been featured\
 	 				 in films, showcasing her virtuosity?",
 	 	  choice1: "Rhoda Scott", choice2: "Hazel Scott", choice3: "Geri Allen", choice4: "Lil Hardin Armstrong",
 	 	  correctAnswer: "Hazel Scott",
@@ -76,12 +76,12 @@ var page = state.page;
 //3. Rendering
 
 function addContent() {
-	 $(".question").text(currentQuestion.question);
-	 $(".choice_1").text(currentQuestion.choice1);
-	 $(".choice_2").text(currentQuestion.choice2);
-	 $(".choice_3").text(currentQuestion.choice3);
-	 $(".choice_4").text(currentQuestion.choice4);
-	 $(".choice_1, .choice_2, .choice_3, .choice_4").removeClass("selected");
+	$(".question").text(currentQuestion.question);
+	$(".choice_1").text(currentQuestion.choice1);
+	$(".choice_2").text(currentQuestion.choice2);
+	$(".choice_3").text(currentQuestion.choice3);
+	$(".choice_4").text(currentQuestion.choice4);
+	$(".choice_1, .choice_2, .choice_3, .choice_4").removeClass("selected");
 }
 
 //.4 Event listener
@@ -92,29 +92,38 @@ function userAnswer() {
 	}); 
 }
 
-
-
-//currently not working. Fix question validation
 function submitChoice() {
-	//state.questions[progress].correctAnswer = $(correctAnswer);
-	$(".submit").on("click", function(event) {
+
+	$("#submit").on("click", function(event) {
 		if ($(".selected").text() === "") {
-			alert ("you didn't pick one!");
+			alert("pick one first ;)");
 			
 		}
-		
-		 else if ($(".selected").text() === state.questions[progress].correctAnswer) {
-			$(".correctAnswer").text("Well done!");
-			$(".next").show();
-			$(".correctAnswer").show();
-			updateScore();
 
+		
+		else if ($(".selected").text() === state.questions[progress].correctAnswer) {		  
+			$("#submit").fadeOut(300);
+			updateScore();
+			$(".selected").animate({width: "250px", 
+				height:"80px", 
+				marginLeft: "250px", 
+				fontSize: "25px"}, 
+				500);
+			$(".selected").text("Well done!");
+			$(".selected").siblings().hide();
+			$(".next").show();
 		 }
 
 		else {
-			$(".correctAnswer").text("Incorrect...");
+			$("#submit").fadeOut(300);
+			$(".selected").animate({width: "250px", 
+				height:"80px", 
+				marginLeft: "250px", 
+				fontSize: "25px", }, 
+				500);
+			$(".selected").text("Incorrect... it's " + state.questions[progress].correctAnswer);
+			$(".selected").siblings().hide();
 			$(".next").show();
-			$(".correctAnswer").show();
 			
 		}
 	});
@@ -122,15 +131,22 @@ function submitChoice() {
 
 function updateContent() {
 	$(".next").on("click", function() {
+		$(".selected").hide().animate({width: "150px", 
+				height:"45px", 
+				marginLeft: "0px", 
+				fontSize: "16px"}, 
+				"fast");
+		$(".selected").show();
+		$(".selected").siblings().show();
 		updatePage();
+		$("#submit").show();
 		progress++;
 		currentQuestion = state.questions[progress];
 		$(".next").hide();
 		$(".correctAnswer").hide();
 		addContent();
- 	});
+	 });
 }
-
 function updatePage() {
 		page++;
 		$(".progress").text("Question " + page + "/10")
@@ -156,7 +172,7 @@ function updateScore() {
 function start() {
 	$(".question_panel").hide();
 	$(".start").on("click", function() {
-		$("#front_page").hide();
+		$("#front_page").fadeOut(700);
 		$(".question_panel").show();
 		$(".next").hide();
 	});

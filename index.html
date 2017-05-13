@@ -8,17 +8,18 @@
   <link rel="stylesheet" href="main.css">
 
 </head>
+
 <body>
-	
-	<div id="front_page">
-		<div> 
-		<h1><ins>Music Quiz</ins> </h1>
+	<div class="main_container">
+		<div id="front_page"> 
+			<div class="image">
+				<img src="http://www.wmstubblefield.com/wordpress/wp-content/uploads/2015/03/Thelonious-and-Dizzy.jpg">
+				<h1><ins>Music Quiz</ins> </h1>
+			</div>
+			<div>
+			<button class="start">Start!</button>
+			</div>
 		</div>
-		<div>
-		<button class="start">Start!</button>
-		</div>
-	</div>
-	
 	 <div class="question_panel">
 		<nav>
 			<div>
@@ -29,16 +30,16 @@
 		<div class="h2">
 			<h2 class="question"></h2>
 			  <div class="answers">
-				<button class="choice_1 selected">A - </button> 
-				<button class="choice_2 selected">B - </button>
-				<button class="choice_3 selected">C - </button>
-				<button class="choice_4 selected">D - </button>
+				<button class="choice_1 selected"></button> 
+				<button class="choice_2 selected"></button>
+				<button class="choice_3 selected"></button>
+				<button class="choice_4 selected"></button>
 			  </div>
 	</div>
 
 	<div class="verdict">
-		<button class="submit">Check answer</button>
-		<p><h1 class="correctAnswer"></h1></p>
+		<button id="submit">Check answer</button>
+		<p class="correctAnswer"></p>
 		<button class="next">Next...</button>
 	
 	</div>
