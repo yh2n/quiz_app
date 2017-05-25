@@ -10,39 +10,47 @@
 </head>
 
 <body>
-	<div class="main_container">
-		<div id="front_page"> 
-			<div class="image">
-				<img src="http://www.wmstubblefield.com/wordpress/wp-content/uploads/2015/03/Thelonious-and-Dizzy.jpg">
-				<h1><ins>Music Quiz</ins> </h1>
-			</div>
+	<div id="front_page">
+		 <div>
+			<img src="http://www.wmstubblefield.com/wordpress/wp-content/uploads/2015/03/Thelonious-and-Dizzy.jpg"> 
+			<h1><span><ins>Music Quiz</ins></span></h1>
+		</div>
+
 			<div>
 			<button class="start">Start!</button>
 			</div>
 		</div>
-	 <div class="question_panel">
-		<nav>
-			<div>
-				<div class="score"></div>
-				<div class="progress">Question 1/10</div>
-			</div>
-		</nav>
-		<div class="h2">
-			<h2 class="question"></h2>
-			  <div class="answers">
-				<button class="choice_1 selected"></button> 
-				<button class="choice_2 selected"></button>
-				<button class="choice_3 selected"></button>
-				<button class="choice_4 selected"></button>
-			  </div>
+			 <div class="question_panel">
+				<nav>
+					<div>
+						<div class="score"></div>
+						<div class="progress"></div>
+					</div>
+				</nav>
+				<div class="h2">
+					<h2 class="question"></h2>
+					  <div class="answers">
+						<button class="choice_1 selected"></button> 
+						<button class="choice_2 selected"></button>
+						<button class="choice_3 selected"></button>
+						<button class="choice_4 selected"></button>
+					  </div>
+				</div>
+			
+				<div>
+					<button id="submit">Check answer</button>
+					
+					<button class="next">Continue...</button>
+				</div>
+					<div class="verdict">
+					<p></p>
+					</div>
+				</div>
+
+	<div class="final-results">
+	 <p></p>
 	</div>
 
-	<div class="verdict">
-		<button id="submit">Check answer</button>
-		<p class="correctAnswer"></p>
-		<button class="next">Next...</button>
-	
-	</div>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="app.js"></script>
 </body>
