@@ -87,11 +87,11 @@ var page = state.page;
 
 function addContent(state) {
 	$(".question").text(currentQuestion.question);
-	$(".choice_1").text(currentQuestion.choice1);
-	$(".choice_2").text(currentQuestion.choice2);
-	$(".choice_3").text(currentQuestion.choice3);
-	$(".choice_4").text(currentQuestion.choice4);
-	$(".choice_1, .choice_2, .choice_3, .choice_4").removeClass("selected");
+	$("#choice_1").text(currentQuestion.choice1);
+	$("#choice_2").text(currentQuestion.choice2);
+	$("#choice_3").text(currentQuestion.choice3);
+	$("#choice_4").text(currentQuestion.choice4);
+	$(".choice").removeClass("selected");
 	$(".progress").text("Question " + page + "/10").show();
 }
 
