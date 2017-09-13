@@ -1,15 +1,17 @@
 * {
   box-sizing: border-box;
 }
-.background_image {
-	background: url("http://testmyip.org/images/header-background.jpg");
+
+body {
+	/*background-color: #708090;*/
+background: url("http://testmyip.org/images/header-background.jpg");
+
 }
 
-.background_image_questions {
-background: url("http://shooterfiles.com/wp-content/uploads/2015/05/USA.-American-jazz-musician-Thelonious-MONK-660x411.jpg") no-repeat;
-background-color: black;
-background-size: cover;
-}
+/*img {
+	background-size: 100%;
+}*/
+
 
 h1 {
 	position: absolute;
@@ -81,13 +83,13 @@ nav {
 
 .question {
 	margin-top: 250px;
-	color: grey;
 
 }
 
 .answers {
 	margin-top: 75px;
 }
+
 
 .start:hover {
 	background-color: #696969;
@@ -115,7 +117,7 @@ nav {
 }
 
 .selected {
-	background-color: #8fbc8f	;
+	background-color: #006400;
 	border: none;
 }
 
@@ -139,20 +141,19 @@ nav {
 
 .next {
 	display: block;
-	height: 60px;
+	height: 40px;
 	width: 175px;
 	border-radius: 5%;
 	border: none;
 	margin-top: 80px;
-	margin-left: auto;
-	margin-right: auto;
+	float: right;
 	font-size: 20px;
 }
 
 .verdict {
 	font-size: 55px;
 	text-align: center;
-	margin-top: 150px;
+	margin-top: 250px;
 	color: #f0e68c	;
 }
 
@@ -161,17 +162,4 @@ nav {
 	text-align: center;
 	margin-top: 250px;
 	color: #f0e68c	;
-}
-
-.reset {
-	display: block;
-	height: 60px;
-	width: 175px;
-	border-radius: 5%;
-	border: none;
-	margin-top: 100px;
-	margin-left: auto;
-	margin-right: auto;
-	background-color: #f0e68c;
-	font-size: 30px;
 }
