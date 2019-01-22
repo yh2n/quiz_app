@@ -9,49 +9,45 @@
 
 </head>
 
-<body class="background_image">
-	<div id="front_page">
+<body class="background">
+	<div class="front_page">
 		 <div>
-			<img src="http://www.wmstubblefield.com/wordpress/wp-content/uploads/2015/03/Thelonious-and-Dizzy.jpg"> 
+<!-- 			<img src="http://www.wmstubblefield.com/wordpress/wp-content/uploads/2015/03/Thelonious-and-Dizzy.jpg"> 
+ -->			<img class="background_image_homepage" src="http://i.imgur.com/vsIqA.jpg">
 			<h1><span><ins>Music Quiz</ins></span></h1>
 		</div>
-
-			<div>
+		<div>
 			<button class="start">Start!</button>
-			</div>
 		</div>
-			 <div class="question_panel">
-				<nav>
-					<div>
-						<div class="score"></div>
-						<div class="progress"></div>
-					</div>
-				</nav>
-				<div class="h2">
-					<h2 class="question"></h2>
-					  <div class="answers">
-						<button class="choice_1 selected"></button> 
-						<button class="choice_2 selected"></button>
-						<button class="choice_3 selected"></button>
-						<button class="choice_4 selected"></button>
-					  </div>
-				</div>
-			
-				<div>
-					<button id="submit">Check answer</button>
-					
-					<button class="next">Continue...</button>
-				</div>
-					<div class="verdict">
-					<p></p>
-					</div>
-				</div>
-
-	
-	<p class="final-results"></p>
-
-	<button class="reset">Try again!</button>
-
+	</div>
+	<div class="question_panel">
+		<nav>
+			<div>
+				<div class="score"></div>
+				<div class="progress"></div>
+			</div>
+		</nav>
+		<div class="h2">
+			<h2 class="question"></h2>
+			  <div class="answers">
+				<button class="choice_1 selected"></button> 
+				<button class="choice_2 selected"></button>
+				<button class="choice_3 selected"></button>
+				<button class="choice_4 selected"></button>
+			  </div>
+		</div>
+		<div>
+			<button class="submit disabled">Check answer</button>				
+			<button class="next">Continue</button>
+		</div>
+		<div class="verdict">
+			<p></p>
+		</div>
+	</div>
+    <div class="result_page">
+		<p class="final-results"></p>
+		<button class="reset">Try again!</button>
+	</div>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="app.js"></script>
 </body>

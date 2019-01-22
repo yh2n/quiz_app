@@ -1,15 +1,16 @@
 * {
   box-sizing: border-box;
+  /*background: black;*/
 }
-.background_image {
-	background: url("http://testmyip.org/images/header-background.jpg");
+.background {
+	background: black;
 }
 
-.background_image_questions {
-background: url("http://shooterfiles.com/wp-content/uploads/2015/05/USA.-American-jazz-musician-Thelonious-MONK-660x411.jpg") no-repeat;
-background-color: black;
-background-size: cover;
-}
+/*.background_image_verdict {
+	background: url("http://shooterfiles.com/wp-content/uploads/2015/05/USA.-American-jazz-musician-Thelonious-MONK-660x411.jpg") no-repeat;
+	background-size: cover;
+	background: black;
+}*/
 
 h1 {
 	position: absolute;
@@ -34,18 +35,28 @@ h1 span {
 	display: block;
 	height: 80px;
 	width: 250px;
-	border-radius: 5%;
+	border-radius: 3px;
 	margin-top: 250px;
 	margin-left: auto;
 	margin-right: auto;
-
+	background-color: black;
+	color: grey;
 	font-size: 40px;
+	outline: none;
 }
 
-#front_page {
+.start:hover {
+	/*background-color: #696969;*/
+	background-color: #1D1917;
+	color: grey;
+	cursor: pointer;
+	border: none;
+}
+
+.front_page {
 	position: relative;
 	width: 1000px;
-	height:600px;
+	height: 600px;
 	margin-top: 150px;
 	margin-left: auto;
 	margin-right: auto;
@@ -71,6 +82,7 @@ nav {
 .score {
 	float: left;
 	font-size: 30px;
+	color: #C48102;
 }
 
 .progress {
@@ -89,55 +101,98 @@ nav {
 	margin-top: 75px;
 }
 
-.start:hover {
-	background-color: #696969;
-	color: white;
-	cursor: pointer;
-}
-
 .choice_1, .choice_2, .choice_3, .choice_4 {
 	display: block;
 	margin-top: 20px;
 	height: 55px;
 	width: 450px;
-	background-color: #5f9ea0	;
+	background-color: #253967;
+	color: grey;
 	font-size: 18px;
 	margin-left: auto;
 	margin-right: auto;
 	border: none;
+	border-radius: 3px;
 }
 
 .choice_1:hover, .choice_2:hover, .choice_3:hover, .choice_4:hover {
-	background-color: gray;
-	border: solid grey; 
+	background-color: #638FD3;
+	border: none; 
 	color: white;	
 	cursor: pointer;
 }
 
 .selected {
-	background-color: #8fbc8f	;
+	background-color: #638FD3;
+	color: white;
 	border: none;
+	outline: none;
 }
 
-.wrong_answers {
-	background-color: #b0e0e6;
+.selected:hover {
+	background-color: #638FD3;
+	color: white;
+	border: none;
+	outline: none;
+}
+
+.wrong_options {
+	background-color: #638FD3;
+	color: white;
 	opacity: 0.2;
 }
 
-#submit {
+.wrong_options:hover {
+	cursor: default;
+}
+
+.wrong_answer {
+	background-color: #610A61;
+	color: white;
+	opacity: 0.6;
+}
+
+.wrong_answer:hover {
+	background-color: #610A61;
+	color: white;
+	opacity: 0.6;
+	cursor: default;
+}
+
+.submit {
 	display: block;
 	height: 60px;
 	width: 175px;
-	border-radius: 5%;
+	border-radius: 3px;
 	border: none;
 	margin-top: 80px;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: #b8860b	;
+	background-color: #C48102	;
+	opacity: 1;
 	font-size: 20px;
 }
 
+.disabled {
+	cursor: not-allowed;
+	background-color: #C48102	;
+	opacity: 0.4;
+}
+
 .next {
+	display: block;
+	height: 60px;
+	width: 175px;
+	border-radius: 3px;
+	border: none;
+	margin-top: 80px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #C48102;	
+	font-size: 20px;
+}
+
+.result {
 	display: block;
 	height: 60px;
 	width: 175px;
@@ -153,25 +208,66 @@ nav {
 	font-size: 55px;
 	text-align: center;
 	margin-top: 150px;
-	color: #f0e68c	;
+	/*color: #7A5001	;*/
+}
+
+.correct {
+	color: #C48102	;
+}
+
+.incorrect {
+	color: #610A61	;
+}
+
+.result_page {
+	background-image: url("http://shooterfiles.com/wp-content/uploads/2015/05/USA.-American-jazz-musician-Thelonious-MONK-660x411.jpg");
+	background-repeat:  no-repeat;
+	background-size: cover;
+	position: relative;
+	width: 1000px;
+	height: 600px;
+	margin-top: 150px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.result_button {
+	display: block;
+	height: 80px;
+	width: 250px;
+	border-radius: 3px;
+	margin-top: 250px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: black;
+	color: grey;
+	font-size: 40px;
 }
 
 .final-results {
 	font-size: 55px;
 	text-align: center;
 	margin-top: 250px;
-	color: #f0e68c	;
+	color: #C48102	;
 }
 
 .reset {
 	display: block;
-	height: 60px;
-	width: 175px;
-	border-radius: 5%;
-	border: none;
-	margin-top: 100px;
+	height: 80px;
+	width: 250px;
+	border-radius: 3px;
+	margin-top: 650px;
 	margin-left: auto;
 	margin-right: auto;
-	background-color: #f0e68c;
-	font-size: 30px;
+	background-color: black;
+	color: grey;
+	font-size: 40px;
+	outline: none;
+}
+
+.reset:hover {
+	background-color: #1D1917;
+	color: grey;
+	cursor: pointer;
+	border: none;
 }
