@@ -60,7 +60,7 @@ state = {
 
 	 	{ question: "What pianist played electric piano -though reluctantly- on Miles Davis recording\
 	 				 'Live at the Fillmore East?",
-	 	  choice1: "Keith Jarrett", choice2: "Joe Zawinul", choice3: "Herbie Hanccock", choice4: "Bill Evans",
+	 	  choice1: "Keith Jarrett", choice2: "Joe Zawinul", choice3: "Herbie Hancock", choice4: "Bill Evans",
  		  correctAnswer: "Keith Jarrett",
  		  correctAnswerText: "Yup, that's right!",
 	 	  wrongAnswerText: "Nooo, Keith Jarrett. Check that recording. Stunning tracks"},
