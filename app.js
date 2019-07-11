@@ -1,6 +1,6 @@
 // INITIAL STATE
 
-state = {
+const state = {
  	questions: [
 		{ question: "What bass player played an unconventional rendition\
 	 				 of 'Donna Lee' on his first album?",

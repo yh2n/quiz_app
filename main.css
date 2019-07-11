@@ -1,13 +1,14 @@
 * {
   box-sizing: border-box;
 }
+
 .background {
 	background: black;
 }
 
 .background_image_homepage {
 	width: 100%;
-	height: 100%;
+	height: 90%;
 	padding-left: 5px;
 	padding-right: 5px;
 	margin-bottom: 250px;
@@ -63,10 +64,11 @@ h1 span {
 	padding-right: 20px;
 }	
 
-/* --- QUESTIONS --- */
+		/* --- QUESTIONS --- */
 
 .question_panel {
 	width: 100%;
+	height: 95vh;
 	margin-left: auto;
 	margin-right: auto;
 	padding-left: 20px;
@@ -154,13 +156,13 @@ nav {
 }
 
 .wrong_answer {
-	background-color: #610A61;
+	background-color: grey;
 	color: white;
 	opacity: 0.6;
 }
 
 .wrong_answer:hover {
-	background-color: #610A61;
+	background-color: grey;
 	color: white;
 	opacity: 0.6;
 	cursor: default;
@@ -212,9 +214,9 @@ nav {
 }
 
 .verdict {
-	font-size: 55px;
+	font-size: 35px;
 	text-align: center;
-	margin-top: 150px;
+	margin-top: 80px;
 }
 
 .correct {
@@ -222,11 +224,11 @@ nav {
 }
 
 .incorrect {
-	color: #610A61	;
+	color: grey;
 }
 
 
-/* ---FINAL RESULTS--- */
+		/* ---FINAL RESULTS--- */
 .result_page {
 	background-size: cover;
 	position: relative;
@@ -271,7 +273,7 @@ nav {
 	height: 80px;
 	width: 250px;
 	border-radius: 3px;
-	margin-top: 650px;
+	margin-top: 200px;
 	margin-left: auto;
 	margin-right: auto;
 	background-color: black;
@@ -313,7 +315,12 @@ nav {
 		font-size: 25px;
 	}
 	.background_image_homepage {
-		margin-bottom: 650px;
+		margin-bottom: 250px;
+	}
+	.start {
+		height: 60px;
+		width: 200px;
+		font-size: 35px;
 	}
 }
 
